@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react'
-import { message0 } from '../HW1'
-import s from './MessageSender.module.css'
+import {message0} from '../HW1'
+import s from './MessageSender.module.scss'
 
 // компонента, которая тестирует вашу компоненту (не изменять, any не трогать)
 const MessageSender = (props: any) => {
@@ -42,7 +42,7 @@ const MessageSender = (props: any) => {
     return (
         <>
             {messages.map((m) => (
-                <M key={'message' + m.id} message={m} />
+                <M key={'message' + m.id} message={m}/>
             ))}
 
             <div id={'hw1-send-message-form'} className={s.sendForm}>
@@ -58,16 +58,11 @@ const MessageSender = (props: any) => {
                     onChange={onChange}
                     onKeyDown={onKeyDown}
                 />
-                <button
-                    id={'hw1-button'}
-                    className={s.button}
-
-                    onClick={addMessage}
-                >
-                    {/*текст кнопки могут изменить студенты*/}
-                    Send
+                <div id={'hw1-button'} className={s.button}
+                     onClick={addMessage}>
+                     Send
                     {/**/}
-                </button>
+                </div>
             </div>
         </>
     )
