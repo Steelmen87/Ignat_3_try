@@ -72,14 +72,20 @@ const HW1 = () => {
 export default HW1
 
 
-const login = () => {
+const Login = () => {
     return (
         <div>
             login
         </div>
     )
 }
-
+const Form = () => {
+    return (
+        <div>
+            <Login/>
+        </div>
+    )
+}
 /*add dev branch*/
 /*add dev branch*/
 /*add dev merge main*/
