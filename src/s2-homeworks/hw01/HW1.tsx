@@ -24,8 +24,8 @@ type UserType = {
     name: string
 }
 type TypeForMessage = {
-    text:string
-    time:string
+    text: string
+    time: string
 }
 // структуру объекта не менять
 export const message0: MessageType = {
@@ -71,6 +71,13 @@ const HW1 = () => {
 
 export default HW1
 
+const Login = () => {
+    return (
+        <div>
+            LoginPopup
+        </div>
+    )
+}
 /*add dev branch*/
 /*add dev branch*/
 /*add dev merge main*/
