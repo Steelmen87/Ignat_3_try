@@ -23,7 +23,8 @@ export const pureOnBlur = (name: string, setError: React.Dispatch<React.SetState
     }
 }
 
-export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: React.Dispatch<React.SetStateAction<string>>) => { // если нажата кнопка Enter - добавить
+export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: React.Dispatch<React.SetStateAction<string>>) => {
+    // если нажата кнопка Enter - добавить
     if (e.key === 'Enter') {
         addUser(e.currentTarget.value)
     }
