@@ -24,6 +24,7 @@
 }
 
 .errorInput {
+    border: 1px solid red;
 }
 
 .button {
@@ -58,4 +59,9 @@
 }
 
 .greeting {
+    padding-top: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
 }

@@ -3,27 +3,28 @@ import Greeting from './Greeting'
 import {UserType} from './HW3'
 
 type GreetingContainerPropsType = {
-    users: Array<string> // need to fix any
+    users: Array<UserType> // need to fix any
     addUserCallback: (name: string) => void // need to fix any
 }
 
-export const pureAddUser = (name: string, setError: any, setName: any, addUserCallback: (name: string) => void) => {
-    if (name) {
+export const pureAddUser = (name: string, setError: React.Dispatch<React.SetStateAction<string>>, setName: React.Dispatch<React.SetStateAction<string>>, addUserCallback: (name: string) => void) => {
+    if (name.trim()) {
         addUserCallback(name)
         setName('')
     } else {
-        setError('error')
-    }// если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
+        setError('Ошибка! Введите имя!')
+    }
+    // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
 }
 
-export const pureOnBlur = (name: string, setError: any) => { // если имя пустое - показать ошибку
-    if (!name) {
-        setError('error')
+export const pureOnBlur = (name: string, setError: React.Dispatch<React.SetStateAction<string>>) => { // если имя пустое - показать ошибку
+    if (name.trim() === '') {
+        setError('Ошибка! Введите имя!')
     }
 }
 
-export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: any) => { // если нажата кнопка Enter - добавить
-    if(e.key === 'Enter'){
+export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: React.Dispatch<React.SetStateAction<string>>) => { // если нажата кнопка Enter - добавить
+    if (e.key === 'Enter') {
         addUser(e.currentTarget.value)
     }
 }
@@ -53,6 +54,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
 
     const onEnter = (e: KeyboardEvent<HTMLInputElement>) => {
         pureOnEnter(e, addUser)
+        error && setError('Ошибка! Введите имя!')
     }
 
     const totalUsers = users.length // need to fix
