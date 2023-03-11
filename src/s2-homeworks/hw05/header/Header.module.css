@@ -1,8 +1,22 @@
 .burgerMenuIcon {
+    position: relative;
+    left:70px;
 }
 
+
 .header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #fff;
+
+    position: fixed;
+    margin: 0 auto;
+    top: 0;
+
 }
 
 .header h1 {
+    position: relative;
+    right:70px;
 }
