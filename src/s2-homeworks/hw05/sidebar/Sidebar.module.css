@@ -1,19 +1,38 @@
 .sidebar {
-    position: absolute;
-    left:-1000px;
+    position: fixed;
+    left: -1000px;
+    transition: left .3s linear;
 }
 
 .sidebar.open {
-    position: absolute;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    min-width: 300px;
+    left: 0;
+    background-color: #fff;
+    z-index: 100;
+    transition: left .2s linear;
+
+    /*position: absolute;
     z-index: 2;
     background-color: #fff;
     left: 0;
     right: 80vw;
     transition: left .5s linear;
-    height: 100vh;
+    height: 100vh;*/
 }
 
 .background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    overflow: visible;
+    /*
     z-index: 1;
     position: absolute;
     width: 100vw;
@@ -23,7 +42,7 @@
     top: 0;
 
     background: #000000;
-    opacity: 0.3;
+    opacity: 0.3;*/
 }
 
 .nav {
@@ -35,11 +54,14 @@
 .nav a {
     text-decoration: none;
     margin-bottom: 45px;
-
     font-style: normal;
     font-weight: 600;
     font-size: 22px;
     line-height: 27px;
+}
+
+.nav a:first-child {
+    padding-top: 4em;
 }
 
 .nav a:hover {
@@ -49,13 +71,23 @@
     text-decoration-line: underline;
     color: #0059B2;
 }
+
 .close {
-    position: relative;
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    padding: 0.3em;
+    cursor: pointer;
+
+    font-size: 1em;
+    background-color: #fff;
+    border: none;
+    /*position: relative;
     left: 300px;
     top: 16px;
     margin-bottom: 28px;
     border: none;
-    background-color: white;
+    background-color: white;*/
 }
 
 .close img {
