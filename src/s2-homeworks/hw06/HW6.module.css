@@ -1,5 +1,11 @@
+.container{
+    margin: 33px 0 230px 70px;
+}
+
 .buttonsContainer {
 }
 
 .editableSpanContainer {
+    width: 276px;
+    padding-bottom: 24px;
 }
