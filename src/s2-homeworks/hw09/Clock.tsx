@@ -23,7 +23,7 @@ function Clock() {
 
     const stop = () => {
         setToggle(false)
-        saveState('hw9-date',date)
+        /*saveState('hw9-date',new Date())*/
         // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
         clearInterval(timerId)
 
@@ -32,20 +32,20 @@ function Clock() {
     const onMouseEnter = () => setShow(true)
     const onMouseLeave = () => setShow(false)
 
-    let day = date.getDay() < 10 ? '0' + date.getDay() : date.getDay()
-    let month = date.getMonth() < 10 ? '0' + date.getMonth() : date.getMonth()
+    let day = date.getUTCDate() < 10 ? '0' + date.getUTCDate() : date.getUTCDate()
+    let month = date.getUTCMonth() + 1
 
     let Hours = date.getHours() < 10 ? '0' + date.getHours() : date.getHours()
     let Minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
     let Seconds = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()
 
     const stringTime = Hours + ':' + Minutes + ':' + Seconds // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = day + '.' + month + '.' + date.getFullYear()
+    const stringDate = day + '.' + (month < 10 ? '0' + month : month) + '.' + date.getFullYear()
 
     // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
-    const language = 'en-us';
-    const stringDay = new Date().toLocaleString(language, {weekday: 'long'})
-    const stringMonth = new Date().toLocaleString(language, {month: 'long'});
+    const language = 'en-EN';
+    const stringDay = date.toLocaleString(language, {weekday: 'long'})
+    const stringMonth = date.toLocaleString(language, {month: 'long'});
 
     return (
         <div className={s.clock}>
