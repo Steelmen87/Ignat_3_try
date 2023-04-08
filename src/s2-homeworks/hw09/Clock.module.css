@@ -2,6 +2,7 @@
 }
 
 .clock {
+    margin: 26px 70px 200px 70px;
 }
 
 .watch {
@@ -11,4 +12,5 @@
 }
 
 .more {
+    margin: 8px 20px 28px 0;
 }
