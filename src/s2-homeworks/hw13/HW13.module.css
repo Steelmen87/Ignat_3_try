@@ -2,6 +2,7 @@
 }
 
 .responseContainer {
+    display: flex;
 }
 
 .imageContainer {

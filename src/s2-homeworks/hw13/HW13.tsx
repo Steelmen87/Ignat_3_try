@@ -24,23 +24,31 @@ const HW13 = () => {
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
-                : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
+                : 'https://samurai.it-incubator.io/api/3.0/homework/test'
 
         setCode('')
         setImage('')
         setText('')
         setInfo('...loading')
 
+        const util = (errorCode: string, error400: string, errorText: string, info: string) => {
+            setCode(errorCode)
+            setImage(error400)
+            setText(errorText)
+            setInfo(info)
+        }
         axios
             .post(url, {success: x})
             .then((res) => {
-                setCode('Код 200!')
-                setImage(success200)
+                util('Код 200!', success200, res.data.errorText, res.data.info)
                 // дописать
-
             })
             .catch((e) => {
-                // дописать
+                x === false ?
+                    util('Ошибка 500!', error500, e.response.data.errorText, e.response.data.info)
+                    : x === undefined
+                    ? util('Ошибка 400!', error400, e.response.data.errorText, e.response.data.info)
+                    : util('Error!', errorUnknown, 'Network Error AxiosError', '')
 
             })
     }
