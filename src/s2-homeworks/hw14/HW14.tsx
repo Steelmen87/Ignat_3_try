@@ -49,11 +49,9 @@ const HW14 = () => {
         setFind(value)
         // делает студент
         setSearchParams({find: value})
-        sendQuery(find)
-
+        sendQuery(value)
         // добавить/заменить значение в квери урла
         // setSearchParams(
-
         //
     }
 
