@@ -48,10 +48,9 @@ const HW14 = () => {
     const onChangeText = (value: string) => {
         setFind(value)
         // делает студент
-        setTimeout(() => {
-            setSearchParams({find:value})
-            sendQuery(find)
-        }, 1500)
+        setSearchParams({find: value})
+        sendQuery(find)
+
         // добавить/заменить значение в квери урла
         // setSearchParams(
 
